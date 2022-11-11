@@ -1,5 +1,7 @@
 package co.edu.unbosque.view;
 
+import java.awt.Checkbox;
+import java.awt.CheckboxGroup;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
@@ -8,36 +10,42 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
-public class PanelHombre extends JPanel{
+public class PanelMujer extends JPanel{
 	
 	private JLabel nombre;
 	private JLabel alias;
 	private JLabel edad;
 	private JLabel correo;
 	private JLabel estatura;
-	private JLabel ingreso;
-	private JLabel fondo;
+	private JLabel divorcio;
+	private JRadioButton check1;
+	private JRadioButton check2;
+	private ButtonGroup grupo;
 	
+	
+	private JLabel fondo;
+
 	private JTextField campoNombre;
 	private JTextField campoAlias;
 	private JTextField campoEdad;
 	private JTextField campoCorreo;
 	private JTextField campoEstatura;
-	private JTextField campoIngresos;
 	
-	public PanelHombre() {
-		
+	public PanelMujer() {
 		setLayout(null);
 		inicializarComponentes();
 		setVisible(true);
 	}
-
+	
 	public void inicializarComponentes() {
+		
 		
 		nombre = new JLabel("Nombre:");
 		nombre.setFont(new Font("", 20,20));
@@ -79,20 +87,36 @@ public class PanelHombre extends JPanel{
 		campoEstatura = new JTextField();
 		campoEstatura.setBounds(180, 454, 200, 20);
 		
-		ingreso = new JLabel("Ingresos:");
-		ingreso.setFont(new Font("", 20,20));
-		ingreso.setForeground(Color.BLACK);
-		ingreso.setBounds(100, 550, 200, 20);
+		divorcio=new JLabel("Divorcio");
+		divorcio.setFont(new Font("", 20,20));
+		divorcio.setForeground(Color.BLACK);
+		divorcio.setBounds(100, 550, 200, 20);
 		
-		campoIngresos = new JTextField();
-		campoIngresos.setBounds(180, 554, 200, 20);
+		
+		check1=new JRadioButton();
+		check1.setText("SI");
+		check1.setOpaque(false);
+		check1.setBounds(210, 520, 120, 80);
+		
+		check2 = new JRadioButton();
+		check2.setOpaque(false);
+		check2.setText("NO");
+		check2.setBounds(210, 560, 120, 80);
+
+		
+		grupo=new ButtonGroup();
+		
+		grupo.add(check1);
+		grupo.add(check2);
+		
 		
 		fondo = new JLabel();
 		fondo.setBounds(0, 0, 1000, 700);
 		fondo.setOpaque(true);
+		
 		 BufferedImage bi1 = null;
 	        try {
-	            bi1 = ImageIO.read(new File("./img/fondo3.jpg"));
+	            bi1 = ImageIO.read(new File("./img/prueba.jpg"));
 	        } catch (IOException e1) {
 	            e1.printStackTrace();
 	        }
@@ -100,7 +124,7 @@ public class PanelHombre extends JPanel{
 
 	        fondo.setIcon(new ImageIcon(redimensionado1));
 		
-				
+		
 		add(nombre);
 		add(campoNombre);
 		add(alias);
@@ -111,8 +135,10 @@ public class PanelHombre extends JPanel{
 		add(campoCorreo);
 		add(estatura);
 		add(campoEstatura);
+		add(divorcio);
+		add(check1);
+		add(check2);
 		add(fondo);
-		
 	}
 
 }

@@ -2,6 +2,7 @@ package co.edu.unbosque.view;
 
 import java.awt.Color;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class View extends JFrame{
@@ -9,6 +10,8 @@ public class View extends JFrame{
 	private PanelInicio pInicio;
 	private PanelRegistrarse pRegistrarse;
 	private PanelHombre pHombre;
+	private PanelMujer pMujer;
+	private PanelCita pCita;
 	
 	public View() {
 		setLayout(null);
@@ -16,7 +19,8 @@ public class View extends JFrame{
 		setSize(1000,700);											
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);				
 		getContentPane().setBackground(new Color(222, 184, 135));	
-		getContentPane().setLayout(null);							
+		getContentPane().setLayout(null);	
+		setIconImage(new ImageIcon(getClass().getResource("/co/edu/unbosque/view/icono.png")).getImage());
 		
 		inicializarComponentes();
 		
@@ -37,7 +41,15 @@ public class View extends JFrame{
 		
 		pHombre = new PanelHombre();
 		pHombre.setBounds(0, 0, 1000, 700);
-		add(pHombre);
+		//add(pHombre);
+		
+		pMujer=new PanelMujer();
+        pMujer.setBounds(0, 0, 1000, 700);
+        //add(pMujer);
+        
+        pCita=new PanelCita();
+        pCita.setBounds(0, 0, 1000, 700);
+        add(pCita);
 		
 	}
 
