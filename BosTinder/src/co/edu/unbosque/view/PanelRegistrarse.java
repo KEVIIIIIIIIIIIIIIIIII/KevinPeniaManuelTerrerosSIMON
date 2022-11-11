@@ -51,7 +51,7 @@ public class PanelRegistrarse extends JPanel{
 	        
 	    hombre = new JButton();
 	    hombre.setBounds(100, 150, 250, 400);
-	    
+	    hombre.setActionCommand("HOMBRE");    
 		 BufferedImage bi2 = null;
 	        try {
 	            bi2 = ImageIO.read(new File("./img/hombre.jpg"));
@@ -64,6 +64,7 @@ public class PanelRegistrarse extends JPanel{
 	        
 	     mujer = new JButton();
 	     mujer.setBounds(630, 150, 250, 400);
+	     mujer.setActionCommand("MUJER");  
 	    
 		 BufferedImage bi3 = null;
 	        try {
@@ -78,6 +79,7 @@ public class PanelRegistrarse extends JPanel{
 	        
 	     otro = new JButton();
 	     otro.setBounds(880, 570, 100, 80);
+	     otro.setActionCommand("OTRO");  
 	    
 		 BufferedImage bi4 = null;
 	        try {

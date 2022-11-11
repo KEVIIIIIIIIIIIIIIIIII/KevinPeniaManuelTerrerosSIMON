@@ -9,6 +9,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -29,6 +30,9 @@ public class PanelHombre extends JPanel{
 	private JTextField campoCorreo;
 	private JTextField campoEstatura;
 	private JTextField campoIngresos;
+	
+	private JButton continuar;
+	private ImageIcon img1;
 	
 	public PanelHombre() {
 		
@@ -100,6 +104,14 @@ public class PanelHombre extends JPanel{
 
 	        fondo.setIcon(new ImageIcon(redimensionado1));
 		
+        continuar = new JButton();
+        img1 = new ImageIcon("./img/guardar.png");
+        continuar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        continuar.setBounds(600, 400, 200, 200);
+        continuar.setBorderPainted(false);
+        continuar.setContentAreaFilled(false);
+        continuar.setOpaque(false);
+        continuar.setIcon(new ImageIcon(img1.getImage().getScaledInstance(continuar.getWidth(), continuar.getHeight(), Image.SCALE_SMOOTH)));
 				
 		add(nombre);
 		add(campoNombre);
@@ -111,6 +123,7 @@ public class PanelHombre extends JPanel{
 		add(campoCorreo);
 		add(estatura);
 		add(campoEstatura);
+		add(continuar);
 		add(fondo);
 		
 	}
