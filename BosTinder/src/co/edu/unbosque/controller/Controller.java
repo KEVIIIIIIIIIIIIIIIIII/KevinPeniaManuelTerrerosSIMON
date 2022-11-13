@@ -19,12 +19,28 @@ public class Controller implements ActionListener{
 
 	public void asignarOyentes() {
 		
-		
+		view.getpHombre().getGuardar().addActionListener(this);
+		view.getpMujer().getAceptar().addActionListener(this);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		String aux = e.getActionCommand();
+		
+		switch (aux) {
+		case "GUARDAR":
+			bosTinder.getHombreDAO().agregarUsuario("Julio el gay","sapo","cualquier marikada","mujer",2,467,"suputamadre.com","1234","ahd asv","el dia que nacio", 6545);
+			bosTinder.gestionarArchivo();
+			break;
+			
+		case "GUARDAR2":
+			bosTinder.getMujerDAO().agregarUsuario("Juliana la lesbiana","sapa","Feminista","Women",34,468,"niñaslindas.com","4321","escribeme","toy vieja", "Si 12 veces y estoy orgullosa");
+			bosTinder.gestionarArchivo2();
+			break;
+
+		default:
+			break;
+		}
 		
 	}
 

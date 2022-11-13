@@ -41,16 +41,56 @@ public class View extends JFrame{
 		
 		pHombre = new PanelHombre();
 		pHombre.setBounds(0, 0, 1000, 700);
-		add(pHombre);
+		//add(pHombre);
 		
 		pMujer=new PanelMujer();
         pMujer.setBounds(0, 0, 1000, 700);
-        //add(pMujer);
+        add(pMujer);
         
         pCita=new PanelCita();
         pCita.setBounds(0, 0, 1000, 700);
         //add(pCita);
 		
+	}
+
+	public PanelInicio getpInicio() {
+		return pInicio;
+	}
+
+	public void setpInicio(PanelInicio pInicio) {
+		this.pInicio = pInicio;
+	}
+
+	public PanelRegistrarse getpRegistrarse() {
+		return pRegistrarse;
+	}
+
+	public void setpRegistrarse(PanelRegistrarse pRegistrarse) {
+		this.pRegistrarse = pRegistrarse;
+	}
+
+	public PanelHombre getpHombre() {
+		return pHombre;
+	}
+
+	public void setpHombre(PanelHombre pHombre) {
+		this.pHombre = pHombre;
+	}
+
+	public PanelMujer getpMujer() {
+		return pMujer;
+	}
+
+	public void setpMujer(PanelMujer pMujer) {
+		this.pMujer = pMujer;
+	}
+
+	public PanelCita getpCita() {
+		return pCita;
+	}
+
+	public void setpCita(PanelCita pCita) {
+		this.pCita = pCita;
 	}
 
 }
