@@ -17,6 +17,10 @@ import javax.swing.JTextField;
 
 public class PanelInicio extends JPanel{
 	
+	private static final String INICIAR = "INICIAR";
+    private static final String REGISTRARSE = "REGISTRARSE";
+    private static final String SALIR = "SALIR";
+	
 	private JLabel fondo;
 	private JLabel titulo;
 	private JLabel usuario;
@@ -66,13 +70,16 @@ public class PanelInicio extends JPanel{
 		
 		iniciar = new JButton("INICIAR SESION");
 		iniciar.setFont(new Font("", 20,20));
+		iniciar.setActionCommand(INICIAR);
 		iniciar.setBounds(270, 350, 200, 30);
 		
 		registrarse = new JButton("REGISTRARSE");
 		registrarse.setFont(new Font("", 20,20));
 		registrarse.setBounds(500, 350, 200, 30);
+		registrarse.setActionCommand(REGISTRARSE);
 		
 		salir = new JButton("SALIR");
+		salir.setActionCommand(SALIR);
 		salir.setFont(new Font("", 20,20));
 		salir.setBounds(400, 500, 100, 30);
 		
@@ -102,5 +109,51 @@ public class PanelInicio extends JPanel{
 		add(fondo);
 	}
 	
+	public JLabel getContraseña() {
+        return contraseña;
+    }
 
+    public void setContraseña(JLabel contraseña) {
+        this.contraseña = contraseña;
+    }
+
+    public JTextField getCampo1() {
+        return campo1;
+    }
+
+    public void setCampo1(JTextField campo1) {
+        this.campo1 = campo1;
+    }
+
+    public JPasswordField getCampo2() {
+        return campo2;
+    }
+
+    public void setCampo2(JPasswordField campo2) {
+        this.campo2 = campo2;
+    }
+
+    public JButton getIniciar() {
+        return iniciar;
+    }
+
+    public void setIniciar(JButton iniciar) {
+        this.iniciar = iniciar;
+    }
+
+    public JButton getRegistrarse() {
+        return registrarse;
+    }
+
+    public void setRegistrarse(JButton registrarse) {
+        this.registrarse = registrarse;
+    }
+
+    public JButton getSalir() {
+        return salir;
+    }
+
+    public void setSalir(JButton salir) {
+        this.salir = salir;
+    }
 }

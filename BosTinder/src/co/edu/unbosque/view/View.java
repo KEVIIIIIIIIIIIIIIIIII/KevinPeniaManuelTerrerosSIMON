@@ -33,15 +33,15 @@ public class View extends JFrame{
 	
 		pInicio = new PanelInicio();
 		pInicio.setBounds(0, 0, 1000, 700);
-		//add(pInicio);
+		add(pInicio);
 		
 		pRegistrarse = new PanelRegistrarse();
 		pRegistrarse.setBounds(0, 0, 1000, 700);
-		//add(pRegistrarse);
+		add(pRegistrarse);
 		
 		pHombre = new PanelHombre();
 		pHombre.setBounds(0, 0, 1000, 700);
-		//add(pHombre);
+		add(pHombre);
 		
 		pMujer=new PanelMujer();
         pMujer.setBounds(0, 0, 1000, 700);
@@ -49,7 +49,7 @@ public class View extends JFrame{
         
         pCita=new PanelCita();
         pCita.setBounds(0, 0, 1000, 700);
-        //add(pCita);
+        add(pCita);
 		
 	}
 

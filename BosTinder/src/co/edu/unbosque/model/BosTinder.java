@@ -15,7 +15,11 @@ public class BosTinder {
 	}
 	
 	public void gestionarArchivo() {
+		hombreDAO.agregarUsuario("470","jualia","erino","mmguevo","H","elmariquita","ickkck","16/45/16196","ala", "4","5165165","feliz","12","4561","23","felizmente soltero");
 		file.escribirArchivo(hombreDAO.mostrar());
+		//file.leerArchivo(hombreDAO.getListaHombre());
+		
+		
 	}
 	public void gestionarArchivo2() {
 		file.escribirArchivo(mujerDAO.mostrar());

@@ -1,4 +1,4 @@
-Id;Nombre;Apellido1;Apellido2;Sexo;Usuario;Contrase�a;Correo;Nacimiento;Edad;Ingresos;Divorcio;NumeroLikesRecibidos;NumeroLikesOtorgados;NumeroMatches;Estado
+Id;Nombre;Apellido1;Apellido2;Sexo;Usuario;Contrase�a;Correo;Nacimiento;Edad;Ingresos;Divorcio;NumeroLikesRecibidos;NumeroLikesOtorgados;NumeroMatches;Estado
 1;Rafael;De Pedro;Peña;H;depedro9;[je4Wg34BEv7qSh;depedro9@mail.com;3/02/1970;49;292,84;No Aplica;11;9;1;Inactivo
 2;Ramón;Dueñas;Cruz;H;rdueñas;"&Y}tuFfU;R4T?fK";rdueñas@correo.es;13/02/1943;76;266,27;No Aplica;19;48;1;Disponible
 3;Carlos;Vega;Hernández;H;vega57;MK}4g,kYG@5Dc*d;vega57@email.com;26/05/1947;72;415,86;No Aplica;29;54;2;Inactivo
@@ -377,7 +377,7 @@ Id;Nombre;Apellido1;Apellido2;Sexo;Usuario;Contrase�a;Correo;Nacimiento;Edad;Ing
 376;Rafael;Da Costa;Sánchez;H;d17;c%%nW9A[yn!V.-H;d17@correo.com;27/10/1953;66;194,99;No Aplica;13;93;0;Inactivo
 377;Concepción;García;Matas;M;garcia11;k4hdK.9f@g7Pfp6;garcia11@correo.es;28/11/1958;60;;NO;22;84;3;Inactivo
 378;María Luisa;Montes;Rojas;M;mmontes72;"5_Xq(Eang[:;XBA";mmontes72@email.net;31/10/1939;79;;NO;3;81;0;Inactivo
-379;Francisca;Pérez;Barrera;M;fraperez;#�NOMBRE?;fraperez@mail.com;23/08/1981;38;;SI;37;69;2;Disponible
+379;Francisca;Pérez;Barrera;M;fraperez;#�NOMBRE?;fraperez@mail.com;23/08/1981;38;;SI;37;69;2;Disponible
 380;María Carmen;Ros;Vicens;M;mariros;bu5}d=Kt:GA:yH4;mariros@mail.es;8/01/1967;52;;NO;94;74;8;Disponible
 381;Manuel;Pastor;Delgado;H;manuelpastor;"HaYw_;#6!X+V#8J";manuelpastor@correo.net;22/12/1993;25;792,2;No Aplica;7;3;0;Disponible
 382;María Teresa;Luque;Enríquez;M;marluque;4/##-N./2W7ny?T;marluque@mail.es;7/03/1946;73;;NO;46;39;5;Inactivo
@@ -466,7 +466,26 @@ Id;Nombre;Apellido1;Apellido2;Sexo;Usuario;Contrase�a;Correo;Nacimiento;Edad;Ing
 465;Carlos;Carrasco;Da Silva;H;carloscarrasco;$ZAX/d&-=!9@?MQ;carloscarrasco@email.net;26/08/1980;39;874,98;No Aplica;53;92;1;Inactivo
 466;Juan Carlos;Galindo;Santana;H;juagalindo;P,u[2PyrjNM_:_9;juagalindo@correo.net;13/12/2001;17;717,09;No Aplica;35;59;3;Disponible
 467;Julio el gay;sapo;cualquier marikada;mujer;suputamadre.com;1234;ahd asv;el dia que nacio;2;6545.0
+468;Juliana la lesbiana;sapa;Feminista;Women;ni�aslindas.com;4321;escribeme;toy vieja;34;Si 12 veces y estoy orgullosa
 
+470;jualia;erino;mmguevo;H;elmariquita;ickkck;16/45/16196;ala;4;1.0E8
 
-468;Juliana la lesbiana;sapa;Feminista;Women;ni�aslindas.com;4321;escribeme;toy vieja;34;Si 12 veces y estoy orgullosa
+470;jualia;erino;mmguevo;H;elmariquita;ickkck;16/45/16196;ala;4;1.0E8
+470;jualia;erino;mmguevo;H;elmariquita;ickkck;16/45/16196;ala;4;1.0E8
+
+470;jualia;erino;mmguevo;H;elmariquita;ickkck;16/45/16196;ala;4;1.0E8;feliz;1;9;1;felizmente soltero
+470;jualia;erino;mmguevo;H;elmariquita;ickkck;16/45/16196;ala;4;1.0E8;feliz;1;9;1;felizmente soltero470;jualia;erino;mmguevo;H;elmariquita;ickkck;16/45/16196;ala;4;1.0E8;feliz;1;9;1;felizmente soltero
+470;jualia;erino;mmguevo;H;elmariquita;ickkck;16/45/16196;ala;4;1.0E8;feliz;1;9;1;felizmente soltero
+470;jualia;erino;mmguevo;H;elmariquita;ickkck;16/45/16196;ala;4;1.0E8;feliz;1;9;1;felizmente soltero470;jualia;erino;mmguevo;H;elmariquita;ickkck;16/45/16196;ala;4;1.0E8;feliz;1;9;1;felizmente soltero
+
+null;null;null;null;null;null;null;null;null;0;1.0E8;feliz;0;0;0;null
+
+null;null;null;null;null;null;null;null;null;null;5165165;feliz;null;null;null;null
+
+null;null;null;null;null;null;null;null;null;null;5165165;feliz;null;null;null;null
+
+null;null;null;null;null;null;null;null;null;null;5165165;feliz;null;null;null;null
+
+null;null;null;null;null;null;null;null;null;null;5165165;feliz;null;null;null;null
+null;null;null;null;null;null;null;null;null;null;5165165;feliz;null;null;null;null
 

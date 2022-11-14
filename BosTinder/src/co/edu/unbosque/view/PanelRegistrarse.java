@@ -15,6 +15,10 @@ import javax.swing.JPanel;
 
 public class PanelRegistrarse extends JPanel{
 	
+	private static final String HOMBRE = "HOMBRE";
+    private static final String MUJER = "MUJER";
+    private static final String OTRO = "OTRO";
+	
 	private JLabel titulo;
 	private JButton hombre;
 	private JButton mujer;
@@ -24,7 +28,7 @@ public class PanelRegistrarse extends JPanel{
 	public PanelRegistrarse() {
 		setLayout(null);
 		inicializarComponentes();
-		setVisible(true);
+		setVisible(false);
 	}
 
 	public void inicializarComponentes() {
@@ -51,7 +55,7 @@ public class PanelRegistrarse extends JPanel{
 	        
 	    hombre = new JButton();
 	    hombre.setBounds(100, 150, 250, 400);
-	    hombre.setActionCommand("HOMBRE");    
+	    hombre.setActionCommand(HOMBRE);   
 		 BufferedImage bi2 = null;
 	        try {
 	            bi2 = ImageIO.read(new File("./img/hombre.jpg"));
@@ -65,6 +69,7 @@ public class PanelRegistrarse extends JPanel{
 	     mujer = new JButton();
 	     mujer.setBounds(630, 150, 250, 400);
 	     mujer.setActionCommand("MUJER");  
+	     mujer.setActionCommand(MUJER);
 	    
 		 BufferedImage bi3 = null;
 	        try {
@@ -79,7 +84,7 @@ public class PanelRegistrarse extends JPanel{
 	        
 	     otro = new JButton();
 	     otro.setBounds(880, 570, 100, 80);
-	     otro.setActionCommand("OTRO");  
+	     otro.setActionCommand(OTRO);  
 	    
 		 BufferedImage bi4 = null;
 	        try {
@@ -98,5 +103,43 @@ public class PanelRegistrarse extends JPanel{
 		add(fondo);
 		
 	}
+	public JLabel getTitulo() {
+        return titulo;
+    }
 
+    public void setTitulo(JLabel titulo) {
+        this.titulo = titulo;
+    }
+
+    public JButton getHombre() {
+        return hombre;
+    }
+
+    public void setHombre(JButton hombre) {
+        this.hombre = hombre;
+    }
+
+    public JButton getMujer() {
+        return mujer;
+    }
+
+    public void setMujer(JButton mujer) {
+        this.mujer = mujer;
+    }
+
+    public JLabel getFondo() {
+        return fondo;
+    }
+
+    public void setFondo(JLabel fondo) {
+        this.fondo = fondo;
+    }
+
+    public JButton getOtro() {
+        return otro;
+    }
+
+    public void setOtro(JButton otro) {
+        this.otro = otro;
+    }
 }

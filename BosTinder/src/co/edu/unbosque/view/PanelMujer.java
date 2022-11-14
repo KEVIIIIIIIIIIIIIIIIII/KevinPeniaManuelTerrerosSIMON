@@ -22,6 +22,7 @@ public class PanelMujer extends JPanel{
 	
 	private static final String GUARDAR = "GUARDAR2";
 	
+	
 	private JLabel nombre;
 	private JLabel apellido1;
 	private JLabel apellido2;
@@ -56,7 +57,7 @@ public class PanelMujer extends JPanel{
 	public PanelMujer() {
 		setLayout(null);
 		inicializarComponentes();
-		setVisible(true);
+		setVisible(false);
 	}
 	
 	public void inicializarComponentes() {

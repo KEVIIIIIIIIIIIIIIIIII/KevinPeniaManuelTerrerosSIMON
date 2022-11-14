@@ -16,6 +16,12 @@ import javax.swing.JTextArea;
 
 public class PanelCita extends JPanel{
 	
+	private static final String IZQUIERDA = "IZQUIERDA";
+    private static final String DERECHA = "DERECHA";
+    private static final String LIKE = "LIKE";
+    private static final String CERRAR = "CERRAR";
+    private static final String EDITAR = "EDITAR";
+	
 	private JLabel imagenCentro;
 	private JLabel fondo;
 	private JTextArea informacion;
@@ -35,7 +41,7 @@ public class PanelCita extends JPanel{
 		
 		setLayout(null);
 		inicializarComponentes();
-		setVisible(true);
+		setVisible(false);
 		
 	}
 
@@ -56,6 +62,7 @@ public class PanelCita extends JPanel{
         derecha.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         derecha.setBounds(840, 200, 100, 100);
         derecha.setBorderPainted(false);
+        derecha.setActionCommand(DERECHA);
         derecha.setContentAreaFilled(false);
         derecha.setOpaque(false);
         derecha.setIcon(new ImageIcon(imgBoton1.getImage().getScaledInstance(derecha.getWidth(), derecha.getHeight(), Image.SCALE_SMOOTH)));
@@ -65,6 +72,7 @@ public class PanelCita extends JPanel{
         izquierda.setBounds(30, 200, 100, 100);
         izquierda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         izquierda.setBorderPainted(false);
+        izquierda.setActionCommand(IZQUIERDA);
         izquierda.setContentAreaFilled(false);
         izquierda.setOpaque(false);
         izquierda.setIcon(new ImageIcon(imgBoton2.getImage().getScaledInstance(izquierda.getWidth(), izquierda.getHeight(), Image.SCALE_SMOOTH)));
@@ -91,6 +99,7 @@ public class PanelCita extends JPanel{
         like.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         like.setBorderPainted(false);
         like.setContentAreaFilled(false);
+        like.setActionCommand(LIKE);
         like.setOpaque(false);
         like.setIcon(new ImageIcon(imgBoton3.getImage().getScaledInstance(like.getWidth(), like.getHeight(), Image.SCALE_SMOOTH)));
         
@@ -100,6 +109,7 @@ public class PanelCita extends JPanel{
         cerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cerrarSesion.setBorderPainted(false);
         cerrarSesion.setContentAreaFilled(false);
+        cerrarSesion.setActionCommand(CERRAR);
         cerrarSesion.setOpaque(false);
         cerrarSesion.setIcon(new ImageIcon(imgBoton4.getImage().getScaledInstance(cerrarSesion.getWidth(), cerrarSesion.getHeight(), Image.SCALE_SMOOTH)));
         
@@ -108,6 +118,7 @@ public class PanelCita extends JPanel{
         editarPerfil.setBounds(930, 70, 40, 40);
         editarPerfil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         editarPerfil.setBorderPainted(false);
+        editarPerfil.setActionCommand(EDITAR);
         editarPerfil.setContentAreaFilled(false);
         editarPerfil.setOpaque(false);
         editarPerfil.setIcon(new ImageIcon(imgBoton5.getImage().getScaledInstance(editarPerfil.getWidth(), editarPerfil.getHeight(), Image.SCALE_SMOOTH)));
@@ -140,5 +151,59 @@ public class PanelCita extends JPanel{
 	    add(fondo);
 		
 	}
+	public JTextArea getInformacion() {
+        return informacion;
+    }
 
+    public void setInformacion(JTextArea informacion) {
+        this.informacion = informacion;
+    }
+
+    public JLabel getCantidadLike() {
+        return cantidadLike;
+    }
+
+    public void setCantidadLike(JLabel cantidadLike) {
+        this.cantidadLike = cantidadLike;
+    }
+
+    public JButton getIzquierda() {
+        return izquierda;
+    }
+
+    public void setIzquierda(JButton izquierda) {
+        this.izquierda = izquierda;
+    }
+
+    public JButton getDerecha() {
+        return derecha;
+    }
+
+    public void setDerecha(JButton derecha) {
+        this.derecha = derecha;
+    }
+
+    public JButton getLike() {
+        return like;
+    }
+
+    public void setLike(JButton like) {
+        this.like = like;
+    }
+
+    public JButton getCerrarSesion() {
+        return cerrarSesion;
+    }
+
+    public void setCerrarSesion(JButton cerrarSesion) {
+        this.cerrarSesion = cerrarSesion;
+    }
+
+    public JButton getEditarPerfil() {
+        return editarPerfil;
+    }
+
+    public void setEditarPerfil(JButton editarPerfil) {
+        this.editarPerfil = editarPerfil;
+    }
 }
