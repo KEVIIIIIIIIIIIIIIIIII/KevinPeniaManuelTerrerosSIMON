@@ -9,7 +9,7 @@ public class PersonaDTO {
 	private String sexo;
 	private String usuario;
 	
-	private String contraseña;
+	private String contrasena;
 	private String correo;
 	
 	private String nacimiento;
@@ -28,7 +28,7 @@ public class PersonaDTO {
 
 
 	public PersonaDTO(String id, String nombre, String apellido1, String apellido2, String sexo, String usuario,
-			String contraseña, String correo, String nacimiento, String edad, String nLikesRecibido, String nLikesOtorgado,
+			String contrasena, String correo, String nacimiento, String edad, String nLikesRecibido, String nLikesOtorgado,
 			String matches, String estado) {
 		this.id = id;
 		this.nombre = nombre;
@@ -36,7 +36,7 @@ public class PersonaDTO {
 		this.apellido2 = apellido2;
 		this.sexo = sexo;
 		this.usuario = usuario;
-		this.contraseña = contraseña;
+		this.contrasena = contrasena;
 		this.correo = correo;
 		this.nacimiento = nacimiento;
 		this.edad = edad;
@@ -120,14 +120,14 @@ public class PersonaDTO {
 
 
 
-	public String getContraseña() {
-		return contraseña;
+	public String getcontrasena() {
+		return contrasena;
 	}
 
 
 
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setcontrasena(String contrasena) {
+		this.contrasena = contrasena;
 	}
 
 

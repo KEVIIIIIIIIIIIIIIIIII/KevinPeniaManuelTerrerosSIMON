@@ -39,7 +39,7 @@ public class PanelInicio extends JPanel{
 	public PanelInicio() {
 		setLayout(null);
 		inicializarComponentes();
-		setVisible(true);
+		setVisible(false);
 	}
 
 	private void inicializarComponentes() {

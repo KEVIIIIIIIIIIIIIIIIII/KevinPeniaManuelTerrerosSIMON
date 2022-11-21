@@ -2,6 +2,7 @@ package co.edu.unbosque.model;
 
 import java.util.ArrayList;
 
+
 import javax.swing.JOptionPane;
 
 import co.edu.unbosque.model.persistance.FileHandler;
@@ -9,40 +10,55 @@ import co.edu.unbosque.model.persistance.FileHandler;
 public class MujerDAO {
 	
 	private ArrayList<MujerDTO> listaMujer;
-	
+
 	public MujerDAO() {
 		listaMujer = new ArrayList<MujerDTO>();
+		loadFile();
+
 	}
-	
-//	public void loadFile() {
-//        //String content = FileHandler.loadFile("datos.csv");
-//      //  String[] lines = content.split("\n");
-//        for (String s : lines) {
-//            if (s.equals(""))
-//                continue;
-//            String[] columns = s.split(";");
-//            listaMujer.add(new MujerDTO(Integer.parseInt(columns[0]),columns[1],columns[2],columns[3],columns[4],columns[5],columns[6],columns[7],columns[8],
-//            		Integer.parseInt(columns[9]),columns[10],columns[11],Integer.parseInt(columns[12]),Integer.parseInt(columns[13]),Integer.parseInt(columns[14]),
-//            		columns[15]));
-//        }
-//	}
-	
-	public void agregarUsuario(String id, String nombre, String apellido1, String apellido2, String sexo, String usuario,
-			String contraseña, String correo, String nacimiento, int edad, String ingreso, String divorcio, int nLikesRecibido, int nLikesOtorgado,
-			int matches, String estado) {
-		listaMujer.add(new MujerDTO(id, nombre, apellido1, apellido2, sexo, usuario, contraseña, correo, nacimiento, edad,ingreso,divorcio,nLikesRecibido,
-				nLikesOtorgado, matches, estado));
+
+	public void agregarUsuario(String id, String nombre, String apellido1, String apellido2, String sexo,
+			String usuario, String contrasena, String correo, String nacimiento, String edad, String ingreso,
+			String divorcio, String nLikesRecibido, String nLikesOtorgado, String matches, String estado) {
+		listaMujer.add(new MujerDTO(id, nombre, apellido1, apellido2, sexo, usuario, contrasena, correo, nacimiento,
+				edad, ingreso, divorcio, nLikesRecibido, nLikesOtorgado, matches, estado));
+		FileHandler.writeFile("dats.csv", mostrar());
 	}
-	
+
 	public String mostrar() {
 		String aux = "";
 		for (MujerDTO s : listaMujer) {
-			aux += s.toString();
+			aux += s.toString() + "\n";
 		}
 		return aux;
 	}
-	
-	
-	
+
+	public void loadFile() {
+		String content = FileHandler.loadFile("dats.csv");
+		String[] lines = content.split("\n");
+		for (String s : lines) {
+			if (s.equals(""))
+				continue;
+			String[] columns = s.split("~");
+			String id = columns[0], nombre = columns[1], apellido1 = columns[2], apellido2 = columns[3],
+					sexo = columns[4], usuario = columns[5], contrasena = columns[6], correo = columns[7],
+					nacimiento = columns[8], edad = columns[9], ingreso = columns[10], divorcio = columns[11],
+					nLikesRecibido = columns[12], nLikesOtorgado = columns[13], matches = columns[14],
+					estado = columns[15];
+			agregarUsuario(id, nombre, apellido1, apellido2, sexo, usuario, contrasena, correo, nacimiento, edad,
+					ingreso, divorcio, nLikesRecibido, nLikesOtorgado, matches, estado);
+		}
+	}
+
+	public ArrayList<MujerDTO> getListaMujer() {
+		return listaMujer;
+	}
+
+	public void setListaMujer(ArrayList<MujerDTO> listaMujer) {
+		this.listaMujer = listaMujer;
+	}
+
+
+
 
 }

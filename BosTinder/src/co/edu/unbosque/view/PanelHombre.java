@@ -19,7 +19,7 @@ import javax.swing.JTextField;
 
 public class PanelHombre extends JPanel{
 	
-	private static final String GUARDAR = "GUARDAR";
+	public static final String GUARDAR= "GUAR";
 	
 	private JLabel nombre;
 	private JLabel alias;
@@ -32,8 +32,8 @@ public class PanelHombre extends JPanel{
 	private JLabel apellido2;
 	private JLabel textDia;
 	private JLabel textMes;
-	private JLabel contraseña;
-	private JLabel confirmarContraseña;
+	private JLabel contrasena;
+	private JLabel confirmarContrasena;
 	
 	private JTextField campoNombre;
 	private JTextField campoAlias;
@@ -43,17 +43,20 @@ public class PanelHombre extends JPanel{
 	private JTextField campoIngreso;
 	private JTextField campoApellido1;
 	private JTextField campoApellido2;
+	private JTextField contra1;
+	private JTextField confirmarContra1;
 	
 	private JButton guardar;
+
+	
 	private ImageIcon img1;
 	
 	private JLabel fecha;
 	private JComboBox<Integer> dia;
 	private JComboBox<Integer> mes;
-	private JLabel año;
-	private JTextField campoAño;
-	private JPasswordField contra1;
-	private JPasswordField confirmarContra1;
+	private JLabel anio;
+	private JTextField campoAnio;
+	
 	
 	public PanelHombre() {
 		
@@ -141,17 +144,27 @@ public class PanelHombre extends JPanel{
 	        Image redimensionado1 = bi1.getScaledInstance(fondo.getWidth(), fondo.getHeight(), Image.SCALE_SMOOTH);
 
 	        fondo.setIcon(new ImageIcon(redimensionado1));
-		
-        guardar = new JButton();
-        img1 = new ImageIcon("./img/guardar.png");
-        guardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        guardar.setBounds(650, 570, 70, 70);
-        guardar.setBorderPainted(false);
-        guardar.setContentAreaFilled(false);
-        guardar.setActionCommand(GUARDAR);
-        guardar.setOpaque(false);
-        guardar.setIcon(new ImageIcon(img1.getImage().getScaledInstance(guardar.getWidth(), guardar.getHeight(), Image.SCALE_SMOOTH)));
+	
+
         
+   	    guardar = new JButton();
+   	    guardar.setBounds(650, 570, 50 ,50);
+   	    guardar.setActionCommand(GUARDAR);  
+   	    guardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+   	    guardar.setBorderPainted(false);
+   	 guardar.setContentAreaFilled(false);
+   	 guardar.setOpaque(false);
+   		 BufferedImage bi2 = null;
+   	        try {
+   	            bi2 = ImageIO.read(new File("./img/guardar.png"));
+   	        } catch (IOException e1) {
+   	            e1.printStackTrace();
+   	        }
+   	        Image redimensionado2 = bi2.getScaledInstance(guardar.getWidth(), guardar.getHeight(), Image.SCALE_SMOOTH);
+
+   	        guardar.setIcon(new ImageIcon(redimensionado2));
+	        
+	        
         fecha = new JLabel("<html>Fecha de nacimiento:<html>");
         fecha.setFont(new Font("", 20,20));
         fecha.setForeground(Color.BLACK);
@@ -218,28 +231,28 @@ public class PanelHombre extends JPanel{
         textMes.setForeground(Color.BLACK);
         textMes.setBounds(250, 448, 50, 30);
 		
-        año = new JLabel("Año");
-        año.setFont(new Font("", 20,20));
-        año.setForeground(Color.BLACK);
-        año.setBounds(360, 448, 50, 30);
+        anio = new JLabel("Año");
+        anio.setFont(new Font("", 20,20));
+        anio.setForeground(Color.BLACK);
+        anio.setBounds(360, 448, 50, 30);
 		
-		campoAño = new JTextField();
-		campoAño.setBounds(400, 448, 50, 30);
+		campoAnio = new JTextField();
+		campoAnio.setBounds(400, 448, 50, 30);
 		
-        contraseña = new JLabel("Contraseña:");
-        contraseña.setFont(new Font("", 20,20));
-        contraseña.setForeground(Color.BLACK);
-        contraseña.setBounds(500, 440, 150, 30);
+        contrasena = new JLabel("Contraseña:");
+        contrasena.setFont(new Font("", 20,20));
+        contrasena.setForeground(Color.BLACK);
+        contrasena.setBounds(500, 440, 150, 30);
         
-        contra1 = new JPasswordField();
+        contra1 = new JTextField();
         contra1.setBounds(613, 440, 200, 30);
         
-        confirmarContraseña = new JLabel("Confirmar contraseña:");
-        confirmarContraseña.setFont(new Font("", 20,20));
-        confirmarContraseña.setForeground(Color.BLACK);
-        confirmarContraseña.setBounds(500, 520, 200, 30);
+        confirmarContrasena = new JLabel("Confirmar contrasena:");
+        confirmarContrasena.setFont(new Font("", 20,20));
+        confirmarContrasena.setForeground(Color.BLACK);
+        confirmarContrasena.setBounds(500, 520, 200, 30);
         
-        confirmarContra1 = new JPasswordField();
+        confirmarContra1 = new JTextField();
         confirmarContra1.setBounds(710, 520, 200, 30);
 				
 		add(nombre);
@@ -263,13 +276,14 @@ public class PanelHombre extends JPanel{
 		add(textDia);
 		add(mes);
 		add(textMes);
-		add(año);
-		add(campoAño);
-		add(contraseña);
+		add(anio);
+		add(campoAnio);
+		add(contrasena);
 		add(contra1);
-		add(confirmarContraseña);
+		add(confirmarContrasena);
 		add(confirmarContra1);
 		add(guardar);
+		
 		add(fondo);
 		
 	}
@@ -347,11 +361,11 @@ public class PanelHombre extends JPanel{
 	}
 
 	public JTextField getCampoAño() {
-		return campoAño;
+		return campoAnio;
 	}
 
 	public void setCampoAño(JTextField campoAño) {
-		this.campoAño = campoAño;
+		this.campoAnio = campoAño;
 	}
 
 	public JComboBox<Integer> getDia() {
@@ -370,7 +384,7 @@ public class PanelHombre extends JPanel{
 		this.mes = mes;
 	}
 
-	public JPasswordField getContra1() {
+	public JTextField getContra1() {
 		return contra1;
 	}
 
@@ -378,7 +392,7 @@ public class PanelHombre extends JPanel{
 		this.contra1 = contra1;
 	}
 
-	public JPasswordField getConfirmarContra1() {
+	public JTextField getConfirmarContra1() {
 		return confirmarContra1;
 	}
 

@@ -1,78 +1,151 @@
 package co.edu.unbosque.model.persistance;
 
-import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
-import java.util.ArrayList;
+import java.util.Properties;
 import java.util.Scanner;
-
-import co.edu.unbosque.model.HombreDTO;
 
 public class FileHandler {
 
 	private static File file;
-    private static Scanner reader;
-    private static PrintWriter writer;
-    
-    private String archivodata = "src/co/edu/unbosque/model/persistance/datos.csv";
-    
-	public int escribirArchivo(String dato) {
-		
-		File f = new File(this.archivodata);
-			
-			try {
-				
-			FileWriter fw = new FileWriter(archivodata,true);
-			PrintWriter pw = new PrintWriter(fw);
-			
-			pw.println(dato);
-			
-			fw.close();
-			
-		} catch (IOException e) {
-			
-			return -1;
+	private static Scanner reader;
+	private static PrintWriter writer;
+	private static Properties prop;
+	//para leer un archivo serializado
+	private static FileInputStream fis; //archivo
+	public static ObjectInputStream ois; //lee el archivo
+	// escritura
+	public static FileOutputStream fos;//archivo
+	public static ObjectOutputStream oos;//escritor
+	
+	public static Object readSerializable(String filename) {
+		try {
+			fis = new FileInputStream("./data/dats.csv");
+		} catch (FileNotFoundException e) {
+			System.out.println("error on find file (serializable - read)");
+			System.out.println(e.getMessage());
 		}
-		return 0;
+		
+		try {
+			ois = new ObjectInputStream(fis);
+		} catch (IOException e) {
+			System.out.println("error on reading (serializable - read)");
+			System.out.println(e.getMessage());
+		}
+		Object aux = null;
+		try {
+			aux = ois.readObject();
+		} catch (ClassNotFoundException e) {
+			System.out.println("error on integrity (serializable - read)");
+		}catch(IOException e) {
+			System.out.println("error on permissions (serializable - read)");
+		}
+		
+		return aux;
+		}
+	
+	
+	public static void writeSerializable(Object o, String filename) {
+		//buscar archivos
+		try {
+			fos = new FileOutputStream("./data/dats.csv");
+		} catch (FileNotFoundException e) {
+			System.out.println("file not found (serializable)");
+			System.out.println(e.getMessage());
+			
+		}
+		//cogiendo archivo y seleccionandolo para escritura
+		try {
+			oos = new ObjectOutputStream(fos);
+			//escribimos el objeto
+			oos.writeObject(o);
+		} catch (IOException e) {
+			System.out.println("error on writing (serializable)");
+			System.out.println(e.getMessage());
+			
+		}
+		
+		try {
+			oos.close();
+			fos.close();
+		} catch (IOException e) {
+			System.out.println("error on closing file (serializable)");
+			System.out.println(e.getMessage());
+			
+		}
+		
 	}
 	
-//	public String leerArchivo(ArrayList<HombreDTO> listaHombre) {
-//		String linea = "";
-//		String cadena = "";
-//		
-//		File f = new File(this.archivodata);
-//		
-//		try {
-//			
-//			FileReader fr = new  FileReader(f);
-//			BufferedReader br = new BufferedReader(fr);
-//			linea = br.readLine();
-//			while(linea!=null) {
-//				cadena += linea;
-//		        String[] lines = linea.split(";");
-//		        for (String s : lines) {
-//		            if (s.equals(""))
-//		                continue;
-//		            String[] columns = s.split(";");
-//		            listaHombre.add(new HombreDTO(columns[0],columns[1],columns[2],columns[3],columns[4],columns[5],columns[6],columns[7],columns[8],
-//		            		columns[9],columns[10],columns[11],columns[12],columns[13],columns[14],
-//		            		columns[15]));
-//			        
-//				}
-//				linea = br.readLine();
-//			}
-//			
-//			fr.close();
-//			
-//		} catch (IOException e) {
-//			// TODO: handle exception
-//		}
-//		
-//		return cadena;
-//	}
-    
+	public static String loadFile(String filename) {
+		file = new File("./data/"+filename);
+		if (!file.exists()) {
+			try {
+				file.createNewFile();
+			} catch (IOException e) {
+				System.out.println("can´t create new file");
+				System.out.println(e.getMessage());
+			}
+		}
+		String content = "";
+		try {
+			reader = new Scanner(file);
+			while (reader.hasNext()) {
+				content += reader.nextLine()+"\n";
+			}
+		} catch (FileNotFoundException e) {
+			System.out.println("file don´t exists");
+			e.printStackTrace();
+		}
+		reader.close();
+		return content;
+
+	}
+
+	public static void writeFile(String filename, String content) {
+		file = new File("./data/"+filename);
+		if (!file.exists()) {
+			try {
+				file.createNewFile();
+			} catch (IOException e) {
+				System.out.println("can´t create new file");
+				System.out.println(e.getMessage());
+			}
+		}
+		try {
+			writer = new PrintWriter(file);
+			writer.print(content);
+		} catch (FileNotFoundException e) {
+			System.out.println("file don´t exists");
+			e.printStackTrace();
+		}
+		writer.close();
+	}
+
+	public static Properties loadProperties(int sel) {
+		prop = new Properties();
+		if (sel == 1) {
+			try {
+				prop.load(new FileInputStream(new File("src/co/edu/unbosque/model/persistance/spa.properties")));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else if (sel == 2) {
+			try {
+				prop.load(new FileInputStream(new File("src/co/edu/unbosque/model/persistance/eng.properties")));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return prop;
+	}
 }
